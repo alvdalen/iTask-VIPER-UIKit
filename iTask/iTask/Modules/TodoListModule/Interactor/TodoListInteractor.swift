@@ -14,8 +14,13 @@ final class TodoListInteractor: NSObject, TodoListInteractorProtocol {
   var todos: Todos = []
   var filteredTodoItems: Todos = []
   weak var presenter: TodoListPresenterProtocol?
+    
+  // MARK: Private Properties
+  private let coreDataManager: CoreDataManagerProtocol = CoreDataManager(
+    modelName: Const.modelName
+  )
   
-  lazy var fetchedResultsController: NSFetchedResultsController<TodoEntity> = {
+  private lazy var fetchedResultsController: NSFetchedResultsController<TodoEntity> = {
     let fetchRequest: NSFetchRequest<TodoEntity> = TodoEntity.fetchRequest()
     fetchRequest.sortDescriptors = [
       NSSortDescriptor(key: Const.dateKey, ascending: false)
@@ -29,11 +34,6 @@ final class TodoListInteractor: NSObject, TodoListInteractorProtocol {
     controller.delegate = self
     return controller
   }()
-  
-  // MARK: Private Properties
-  private let coreDataManager: CoreDataManagerProtocol = CoreDataManager(
-    modelName: Const.modelName
-  )
   
   // MARK: Initializers
   init(
@@ -202,7 +202,7 @@ extension TodoListInteractor: NSFetchedResultsControllerDelegate {
 
 // MARK: - Constants
 private enum Const {
-  static let modelName: String = "TodoModel"
+  static let modelName: String = "iTask"
   static let todoId: String = "id == %@"
   static let dateKey = "date"
 }

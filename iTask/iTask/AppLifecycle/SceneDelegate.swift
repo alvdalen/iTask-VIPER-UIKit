@@ -26,15 +26,13 @@ extension SceneDelegate: UIWindowSceneDelegate {
 private extension SceneDelegate {
   func configWindow(with scene: UIScene) {
     guard let windowScene = scene as? UIWindowScene else { return }
+    let viewController = TodoListAssembly.build()
+    let tabBarController = CustomTabBarController()
+    tabBarController.viewControllers = [viewController]
     window = UIWindow(windowScene: windowScene)
     window?.windowScene = windowScene
-    let viewController = ViewController()
-    let navigationController = UINavigationController(
-      rootViewController: viewController
-    )
-    let tabBarController = CustomTabBarController()
-    tabBarController.viewControllers = [navigationController]
     window?.rootViewController = tabBarController
+    window?.overrideUserInterfaceStyle = .dark
     window?.makeKeyAndVisible()
   }
 }

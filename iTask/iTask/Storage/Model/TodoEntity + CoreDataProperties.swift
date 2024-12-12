@@ -1,5 +1,5 @@
 //
-//  TodoEntity+CoreDataProperties.swift
+//  TodoEntity + CoreDataProperties.swift
 //  iTask
 //
 //  Created by Адам Мирзаканов on 12.12.2024.

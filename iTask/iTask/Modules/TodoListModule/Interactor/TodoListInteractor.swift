@@ -9,18 +9,13 @@ import CoreData
 
 final class TodoListInteractor: NSObject, TodoListInteractorProtocol {
   // MARK: Internal Properties
+  let networkService: NetworkServiceProtocol
+  let requestService: NetworkRequestServiceProtocol
   var todos: Todos = []
   var filteredTodoItems: Todos = []
   weak var presenter: TodoListPresenterProtocol?
-  let networkService: NetworkServiceProtocol
-  let requestService: NetworkRequestServiceProtocol
   
-  // MARK: Private Properties
-  private let coreDataManager: CoreDataManagerProtocol = CoreDataManager(
-    modelName: Const.modelName
-  )
-  
-  private lazy var fetchedResultsController: NSFetchedResultsController<TodoEntity> = {
+  lazy var fetchedResultsController: NSFetchedResultsController<TodoEntity> = {
     let fetchRequest: NSFetchRequest<TodoEntity> = TodoEntity.fetchRequest()
     fetchRequest.sortDescriptors = [
       NSSortDescriptor(key: Const.dateKey, ascending: false)
@@ -34,6 +29,11 @@ final class TodoListInteractor: NSObject, TodoListInteractorProtocol {
     controller.delegate = self
     return controller
   }()
+  
+  // MARK: Private Properties
+  private let coreDataManager: CoreDataManagerProtocol = CoreDataManager(
+    modelName: Const.modelName
+  )
   
   // MARK: Initializers
   init(
@@ -55,11 +55,12 @@ final class TodoListInteractor: NSObject, TodoListInteractorProtocol {
   
   func add(todo: Todo) {
     do {
-      try coreDataManager.addObject(ofType: TodoEntity.self) { [weak self] todoEntity in
-        guard let self = self else { return }
+      try coreDataManager.addObject(
+        ofType: TodoEntity.self
+      ) { [weak self] todoEntity in
         var newTodo = todo
         newTodo.date = Date().description // Устанавливаем текущую дату для сортировки
-        self.updateTodoEntity(todoEntity, with: newTodo)
+        self?.updateTodoEntity(todoEntity, with: newTodo)
       }
     } catch {
       handleError(error: error)
@@ -205,4 +206,3 @@ private enum Const {
   static let todoId: String = "id == %@"
   static let dateKey = "date"
 }
-

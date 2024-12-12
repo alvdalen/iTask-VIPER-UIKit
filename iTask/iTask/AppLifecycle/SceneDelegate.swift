@@ -32,7 +32,9 @@ private extension SceneDelegate {
     let navigationController = UINavigationController(
       rootViewController: viewController
     )
-    window?.rootViewController = navigationController
+    let tabBarController = CustomTabBarController()
+    tabBarController.viewControllers = [navigationController]
+    window?.rootViewController = tabBarController
     window?.makeKeyAndVisible()
   }
 }

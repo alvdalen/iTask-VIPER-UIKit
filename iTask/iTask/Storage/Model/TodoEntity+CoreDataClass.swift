@@ -8,5 +8,7 @@
 
 import CoreData
 
+typealias Entities = [TodoEntity]
+
 @objc(TodoEntity)
 public final class TodoEntity: NSManagedObject { }

@@ -15,6 +15,7 @@ class BaseTableViewCell<ViewType: UIView>: UITableViewCell {
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     setupViews()
+    setupDelegate()
   }
   
   required init?(coder: NSCoder) {
@@ -23,7 +24,10 @@ class BaseTableViewCell<ViewType: UIView>: UITableViewCell {
   
   // MARK: Internal Methods
   /// Подклассы могут переопределять этот метод при надобности.
-  func setupViews() {
+  func setupDelegate() { }
+  
+  // MARK: Private Methods
+  private func setupViews() {
     let customView = RootView()
     contentView.addSubview(customView)
     customView.fillSuperView()

@@ -22,8 +22,7 @@ final class TodoListTableViewCell: BaseTodoListCell {
   var todo: Todo?
   
   // MARK: Internal Methods
-  override func setupViews() {
-    super.setupViews()
+  override func setupDelegate() {
     rootView.delegate = self
   }
   

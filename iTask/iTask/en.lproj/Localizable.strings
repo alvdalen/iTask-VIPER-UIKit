@@ -5,3 +5,22 @@
   Created by Адам Мирзаканов on 12.12.2024.
   
 */
+
+"tasks_key" = "Tasks";
+"edit_key" = "Edit";
+"share_key" = "Share";
+"delete_key" = "Delete";
+"error_key" = "Error";
+"ok_key" = "Ok";
+"tasks_count_key" = " Tasks";
+"task_title_placeholder_key" = "Enter \nthe title";
+"task_body_placeholder_key" = "Describe the task";
+"save_button_title_key" = "Save";
+"add_nav_title_key" = "New";
+"edit_nav_title_key" = "Edit";
+"content_not_available_key" = "Content not available";
+"server_issue_key" = "Server issue";
+"unknown_error" = "Unknown error";
+"url_error_key" = "URL rror";
+"decoding_error_key" = "Decoding error";
+"response_error_key" = "Response error";

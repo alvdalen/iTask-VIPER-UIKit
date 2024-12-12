@@ -5,3 +5,22 @@
   Created by Адам Мирзаканов on 12.12.2024.
   
 */
+
+"tasks_key" = "Задачи";
+"edit_key" = "Редактировать";
+"share_key" = "Поделиться";
+"delete_key" = "Удалить";
+"error_key" = "Ошибка";
+"ok_key" = "Хорошо";
+"tasks_count_key" = " Задач";
+"task_title_placeholder_key" = "Введите \nзаголовок";
+"task_body_placeholder_key" = "Введите описание задачи";
+"save_button_title_key" = "Сохранить";
+"add_nav_title_key" = "Новая задача";
+"edit_nav_title_key" = "Редактировать";
+"content_not_available_key" = "Ничего не найдено";
+"server_issue_key" = "Сервер не доступен";
+"unknown_error" = "Неизвестная ошибка";
+"url_error_key" = "Ошибка URL";
+"decoding_error_key" = "Ошибка декодирования";
+"response_error_key" = "Ошибка запроса";

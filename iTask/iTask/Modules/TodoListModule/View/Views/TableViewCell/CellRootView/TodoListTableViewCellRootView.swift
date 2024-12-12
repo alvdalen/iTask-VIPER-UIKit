@@ -152,11 +152,11 @@ private extension TodoListTableViewCellRootView {
   }
   
   func animateStateTaskButton(_ sender: UIButton) {
-    UIView.animate(withDuration: Const.duration) {
-      self.scaleDownButton(sender)
+    UIView.animate(withDuration: Const.duration) { [weak self] in
+      self?.scaleDownButton(sender)
     } completion: { _ in
-      UIView.animate(withDuration: Const.duration) {
-        self.scaleUpButton(sender)
+      UIView.animate(withDuration: Const.duration) { [weak self] in
+        self?.scaleUpButton(sender)
       }
     }
   }

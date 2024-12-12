@@ -1,13 +1,13 @@
 //
-//  CustomTabBarRootViewConst.swift
+//  CustomTabBarControllerConst.swift
 //  iTask
 //
-//  Created by Адам Мирзаканов on 12.12.2024.
+//  Created by Адам Мирзаканов on 13.12.2024.
 //
 
 import UIKit
 
-enum CustomTabBarRootViewConst {
+enum CustomTabBarControllerConst {
   static let taskButtonIcon = UIImage(systemName: "plus")
   
   static let tabBarHeight: CGFloat = 60.0

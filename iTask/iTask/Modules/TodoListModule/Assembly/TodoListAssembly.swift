@@ -31,7 +31,6 @@ final class TodoListAssembly {
     view.presenter = presenter
     router.viewController = view
     
-    // навигация
     let navigationController = UINavigationController(rootViewController: view)
     return navigationController
   }

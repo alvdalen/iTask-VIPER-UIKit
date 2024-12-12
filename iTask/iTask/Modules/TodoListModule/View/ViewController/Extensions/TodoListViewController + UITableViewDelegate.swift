@@ -209,7 +209,7 @@ private extension TodoListViewController {
     tabBarController.tabBar.tintColor = .white
     let todosCountString = String(presenter.todosCount)
     let todosCountTitle = todosCountString + Const.tabBarTaskCountTitleText
-    tabBarController.rootView.taskCountLabel.text = todosCountTitle
+    tabBarController.taskCountLabel.text = todosCountTitle
     tabBarController.customTabBarDelegate = self
   }
 }

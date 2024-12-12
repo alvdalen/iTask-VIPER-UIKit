@@ -18,4 +18,21 @@ enum ErrorMessage {
   static var errorTemplate: String {
     "Expected view to be of type %@ but got %@ instead"
   }
+  
+  // MARK: Core Data
+  static var fetchObjectsError: String {
+    "Failed to fetch objects of type %@: %@"
+  }
+  
+  static var updateObjectsError: String {
+    "Failed to update object of type %@: %@"
+  }
+  
+  static var deleteObjectsError: String {
+    "Failed to delete object of type %@: %@"
+  }
+  
+  static var saveContextError: String {
+    "Failed to save context %@:"
+  }
 }

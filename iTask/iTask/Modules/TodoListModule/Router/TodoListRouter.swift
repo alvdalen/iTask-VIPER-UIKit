@@ -17,6 +17,14 @@ final class TodoListRouter: TodoListRouterProtocol {
     delegate: TodoDetailsDelegate,
     navTitle: String
   ) {
-
+    let detailsVC = TodoDetailsAssembly.build(
+      with: todo,
+      delegate: delegate,
+      navTitle: navTitle
+    )
+    viewController?.navigationController?.pushViewController(
+      detailsVC,
+      animated: true
+    )
   }
 }

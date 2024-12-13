@@ -8,5 +8,5 @@
 import UIKit
 
 enum GlobalConst {
-  static let systemColor: UIColor = .systemPurple
+  static let systemColor: UIColor = .systemYellow
 }

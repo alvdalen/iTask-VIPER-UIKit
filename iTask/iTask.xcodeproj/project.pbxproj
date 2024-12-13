@@ -6,7 +6,18 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		37084D652D0C4E3000E98ECC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 379203B22D0A201A0054BF4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 379203B92D0A201A0054BF4C;
+			remoteInfo = iTask;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		37084D612D0C4E3000E98ECC /* iTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		379203BA2D0A201A0054BF4C /* iTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -21,6 +32,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		37084D622D0C4E3000E98ECC /* iTaskTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = iTaskTests;
+			sourceTree = "<group>";
+		};
 		379203BC2D0A201A0054BF4C /* iTask */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -32,6 +48,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		37084D5E2D0C4E3000E98ECC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		379203B72D0A201A0054BF4C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -46,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				379203BC2D0A201A0054BF4C /* iTask */,
+				37084D622D0C4E3000E98ECC /* iTaskTests */,
 				379203BB2D0A201A0054BF4C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				379203BA2D0A201A0054BF4C /* iTask.app */,
+				37084D612D0C4E3000E98ECC /* iTaskTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,6 +86,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		37084D602D0C4E3000E98ECC /* iTaskTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37084D692D0C4E3000E98ECC /* Build configuration list for PBXNativeTarget "iTaskTests" */;
+			buildPhases = (
+				37084D5D2D0C4E3000E98ECC /* Sources */,
+				37084D5E2D0C4E3000E98ECC /* Frameworks */,
+				37084D5F2D0C4E3000E98ECC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37084D662D0C4E3000E98ECC /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				37084D622D0C4E3000E98ECC /* iTaskTests */,
+			);
+			name = iTaskTests;
+			packageProductDependencies = (
+			);
+			productName = iTaskTests;
+			productReference = 37084D612D0C4E3000E98ECC /* iTaskTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		379203B92D0A201A0054BF4C /* iTask */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 379203D02D0A201D0054BF4C /* Build configuration list for PBXNativeTarget "iTask" */;
@@ -93,6 +141,10 @@
 				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1610;
 				TargetAttributes = {
+					37084D602D0C4E3000E98ECC = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = 379203B92D0A201A0054BF4C;
+					};
 					379203B92D0A201A0054BF4C = {
 						CreatedOnToolsVersion = 16.1;
 					};
@@ -114,11 +166,19 @@
 			projectRoot = "";
 			targets = (
 				379203B92D0A201A0054BF4C /* iTask */,
+				37084D602D0C4E3000E98ECC /* iTaskTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		37084D5F2D0C4E3000E98ECC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		379203B82D0A201A0054BF4C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -129,6 +189,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		37084D5D2D0C4E3000E98ECC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		379203B62D0A201A0054BF4C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -138,7 +205,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		37084D662D0C4E3000E98ECC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 379203B92D0A201A0054BF4C /* iTask */;
+			targetProxy = 37084D652D0C4E3000E98ECC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		37084D672D0C4E3000E98ECC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A62Q8AU4X8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adamirzakan.iTaskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iTask.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iTask";
+			};
+			name = Debug;
+		};
+		37084D682D0C4E3000E98ECC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A62Q8AU4X8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.adamirzakan.iTaskTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iTask.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iTask";
+			};
+			name = Release;
+		};
 		379203D12D0A201D0054BF4C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -327,6 +438,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		37084D692D0C4E3000E98ECC /* Build configuration list for PBXNativeTarget "iTaskTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37084D672D0C4E3000E98ECC /* Debug */,
+				37084D682D0C4E3000E98ECC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		379203B52D0A201A0054BF4C /* Build configuration list for PBXProject "iTask" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

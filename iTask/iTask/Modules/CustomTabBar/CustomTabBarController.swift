@@ -10,13 +10,17 @@ import UIKit
 fileprivate typealias Const = CustomTabBarControllerConst
 
 // MARK: - Delegate
+/// Протокол делегата для пользовательского таб-бара.
+/// Используется для обработки событий на пользовательском таб-баре.
 protocol CustomTabBarControllerDelegate: AnyObject {
+  /// Метод вызывается при нажатии на кнопку добавления задачи.
   func didTapAddTaskButton()
 }
 
 // MARK: - CustomTabBarController
 final class CustomTabBarController: UITabBarController {
   // MARK: Internal Properties
+  /// Делегат для пользовательского таб-бара.
   weak var customTabBarDelegate: CustomTabBarControllerDelegate?
   
   // MARK: Internal Views
@@ -53,12 +57,12 @@ final class CustomTabBarController: UITabBarController {
   }
   
   // MARK: Internal Methods
-  /// Отключить кнопку новой задачи.
+  /// Отключает кнопку новой задачи.
   func disableAddTaskButton() {
     addTaskButton.isEnabled = false
   }
   
-  /// Включить кнопку новой задачи.
+  /// Включает кнопку новой задачи.
   func enableAddTaskButton() {
     addTaskButton.isEnabled = true
   }
@@ -99,6 +103,8 @@ private extension CustomTabBarController {
     )
   }
   
+  /// Cкрытие стандартного таб-бара и
+  /// позиционирование кастомного таб-бара с учетом `SafeArea`.
   func configTabBar() {
     tabBar.isHidden = true
     let tabBarHeight: CGFloat = Const.tabBarHeight

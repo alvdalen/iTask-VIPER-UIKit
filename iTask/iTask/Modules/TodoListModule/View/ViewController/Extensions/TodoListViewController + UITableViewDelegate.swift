@@ -11,6 +11,7 @@ fileprivate typealias Const = TodoListViewControllerConst
 
 // MARK: - UITableViewDelegate
 extension TodoListViewController: UITableViewDelegate {
+  /// Конфигурирует контекстное меню для строки таблицы.
   func tableView(
     _ tableView: UITableView,
     contextMenuConfigurationForRowAt indexPath: IndexPath,
@@ -20,7 +21,7 @@ extension TodoListViewController: UITableViewDelegate {
     return createContextMenuConfiguration(tableView, for: indexPath, with: todo)
   }
   
-  /// Отобразить разделительные линии таблицы после исчезновения контекстного меню.
+  /// Обрабатывает завершение взаимодействия с контекстным меню для строки таблицы.
   func tableView(
     _ tableView: UITableView,
     willEndContextMenuInteraction configuration: UIContextMenuConfiguration,
@@ -33,12 +34,14 @@ extension TodoListViewController: UITableViewDelegate {
     else {
       return
     }
+    // Отобразить разделительные линии таблицы после исчезновения контекстного меню.
     tableView.separatorStyle = .singleLine
     animator?.addAnimations {
       cell.restoreContentPosition()
     }
   }
   
+  /// Обрабатывает выбор строки в таблице.
   func tableView(
     _ tableView: UITableView,
     didSelectRowAt indexPath: IndexPath
@@ -46,6 +49,7 @@ extension TodoListViewController: UITableViewDelegate {
     presenter.didSelectTodo(at: indexPath.row, navTitle: Const.editNavTitleText)
   }
   
+  /// Обрабатывает действия редактирования ячейки таблицы (удаление).
   func tableView(
     _ tableView: UITableView,
     commit editingStyle: UITableViewCell.EditingStyle,
@@ -56,7 +60,15 @@ extension TodoListViewController: UITableViewDelegate {
     }
   }
   
-  /// Footer таблицы
+  /// Возвращает высоту строки таблицы для заданного индекса.
+  func tableView(
+    _ tableView: UITableView,
+    heightForRowAt indexPath: IndexPath
+  ) -> CGFloat {
+    return Const.rowHeight
+  }
+  
+  /// Получение Футера для таблицы.
   func tableView(
     _ tableView: UITableView,
     viewForFooterInSection section: Int
@@ -66,6 +78,7 @@ extension TodoListViewController: UITableViewDelegate {
     return footerView
   }
   
+  /// Возвращает высоту футера для раздела таблицы.
   func tableView(
     _ tableView: UITableView,
     heightForFooterInSection section: Int
@@ -73,19 +86,16 @@ extension TodoListViewController: UITableViewDelegate {
     guard section == .zero else { return .zero }
     return getTabBarHeight()
   }
-  
-  func tableView(
-    _ tableView: UITableView,
-    heightForRowAt indexPath: IndexPath
-  ) -> CGFloat {
-    
-    return Const.rowHeight
-  }
 }
 
 // MARK: - Private Methods
 private extension TodoListViewController {
-  /// Конфигурация контекстного меню.
+  /// Создает конфигурацию для контекстного меню строки таблицы.
+  /// - Parameters:
+  ///   - tableView: Таблица, для которой создается контекстное меню.
+  ///   - indexPath: Для которой создается меню.
+  ///   - item: Элемент таблицы, с которым будет связано контекстное меню.
+  /// - Returns: Конфигурация контекстного меню для данной строки.
   func createContextMenuConfiguration(
     _ tableView: UITableView,
     for indexPath: IndexPath,
@@ -100,7 +110,12 @@ private extension TodoListViewController {
     }
   }
   
-  /// Контекстное меню.
+  /// Создает действия для контекстного меню строки таблицы.
+  /// - Parameters:
+  ///   - tableView: Таблица, для которой создаются действия контекстного меню.
+  ///   - indexPath: Для которой создается меню.
+  ///   - item: Элемент таблицы, с которым будет связано контекстное меню.
+  /// - Returns: Меню с действиями для данной строки.
   func createContextMenuActions(
     _ tableView: UITableView,
     for indexPath: IndexPath,
@@ -205,6 +220,10 @@ private extension TodoListViewController {
     return tabBarController.tabBar.frame.height
   }
   
+  
+  /// Обновляет текст с количеством задач на `TabBar`.
+  /// - Parameter tabBarController: Контроллер вкладок,
+  /// содержащий кастомный `TabBar`и метку для отображения количества задач.
   func updateTodosCountText(tabBarController: CustomTabBarController) {
     tabBarController.tabBar.tintColor = .white
     let todosCountString = String(presenter.todosCount)

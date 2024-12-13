@@ -11,7 +11,10 @@ typealias BaseTodoListCell = BaseTableViewCell<TodoListTableViewCellRootView>
 fileprivate typealias Const = TodoListTableViewCellConst
 
 // MARK: - Delegate
+/// Протокол делегата для обработки действий в ячейке.
 protocol TodoListTableViewCellDelegate: AnyObject {
+  /// Вызывается при нажатии на кнопку изменения состояния задачи.
+  /// - Parameter todo: Задача, связанная с ячейкой.
   func didTapStateTaskButton(for todo: Todo)
 }
 

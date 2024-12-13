@@ -8,14 +8,18 @@
 import Foundation
 
 extension TodoDetailsPresenter: TodoDetailsPresenterProtocol {
-  func saveTodo(_ taskTitle: String, _ taskBody: String, _ taskDate: String) {
+  func saveTodo(
+    _ taskTitle: String,
+    _ taskBody: String,
+    _ taskDate: String
+  ) {
     let dateFormatter = DateFormatter()
     let updatedTodo =  Todo(
       id: todo?.id ?? UUID().uuidString,
       title: taskTitle,
       body: taskBody,
       date: todo?.date ?? dateFormatter.string(from: Date()),
-      completed: todo?.completed ?? true // новый туду всегда актуален
+      completed: todo?.completed ?? true // новый туду всегда не зачеркнут
     )
     delegate?.didSaveTodo(updatedTodo)
     router.navigateBack()
@@ -32,9 +36,7 @@ extension TodoDetailsPresenter: TodoDetailsPresenterProtocol {
   }
   
   func deleteTodo(_ todo: Todo) {
-    // Уведомляем делегата об удалении задачи
-    delegate?.didDeleteTodo(todo)
-    // Навигация обратно на предыдущий экран
-    router.navigateBack()
+    delegate?.didDeleteTodo(todo) // Уведомляет делегата об удалении задачи
+    router.navigateBack()         // Навигация обратно на предыдущий экран
   }
 }

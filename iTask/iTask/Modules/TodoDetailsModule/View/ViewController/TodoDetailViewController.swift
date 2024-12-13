@@ -35,7 +35,7 @@ private extension TodoDetailViewController {
     presenter?.viewDidLoad()
   }
   
-  /// Отключить кнопку добавления новой задачи.
+  /// Отключает кнопку (+) добавления новой задачи на панели вкладок.
   func disableAddTaskButton() {
     if let tabBarController = tabBarController as? CustomTabBarController {
       tabBarController.disableAddTaskButton()

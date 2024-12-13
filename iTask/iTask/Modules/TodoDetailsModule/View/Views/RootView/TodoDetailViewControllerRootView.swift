@@ -119,6 +119,8 @@ final class TodoDetailViewControllerRootView: BaseRootView {
   }
   
   // MARK: Internal Methods
+  /// Обновляет состояние кнопки сохранения в зависимости от того,
+  /// пусты ли текстовые поля для заголовка и описания задачи.
   func stateSaveButton() {
     let taskTitleTextViewIsEmpty = taskTitleTextView.text.isEmpty
     let taskBodyTextViewIsEmpty = taskBodyTextView.text.isEmpty
@@ -165,6 +167,8 @@ final class TodoDetailViewControllerRootView: BaseRootView {
     ).isActive = true
   }
   
+  /// Анимирует деактивацию кнопки сохранения,
+  /// устанавливая её непрозрачность и отключая взаимодействие.
   private func inactiveSaveButtonAnimate() {
     UIView.animate(withDuration: Const.saveButtonAnimateDuration) {
       self.saveButton.alpha = Const.inactiveButtonAlpha
@@ -173,6 +177,8 @@ final class TodoDetailViewControllerRootView: BaseRootView {
     }
   }
   
+  /// Анимирует активацию кнопки сохранения,
+  /// устанавливая её непрозрачность и включая взаимодействие.
   private func activeSaveButtonAnimate() {
     UIView.animate(withDuration: Const.saveButtonAnimateDuration) {
       self.saveButton.alpha = Const.activeButtonAlpha

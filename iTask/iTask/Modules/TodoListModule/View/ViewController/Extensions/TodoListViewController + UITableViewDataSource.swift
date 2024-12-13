@@ -15,8 +15,10 @@ extension TodoListViewController: UITableViewDataSource {
   ) -> Int {
     switch searchController.isActive {
     case true:
+      // Если поиск активен, вернуть количество отфильтрованных задач.
       return presenter.filteredTodosCount
     case false:
+      // Если поиск не активен, вернуть общее количество задач.
       return presenter.todosCount
     }
   }
@@ -44,8 +46,10 @@ private extension TodoListViewController {
     let todo: Todo
     switch searchController.isActive {
     case true:
+      // Если поиск активен, получить отфильтрованную задачу.
       todo = presenter.filteredTodo(at: indexPath.row)
     case false:
+      // Если поиск не активен, получить обычную задачу.
       todo = presenter.todo(at: indexPath.row)
     }
     
@@ -75,9 +79,11 @@ private extension TodoListViewController {
     for title: String,
     completed: Bool
   ) -> NSAttributedString {
+    
+    // Словарь для хранения атрибутов строки.
     var attributes: [NSAttributedString.Key: Any] = [:]
-    let paragraphStyle = NSMutableParagraphStyle()
-    paragraphStyle.lineBreakMode = .byWordWrapping
+    
+    // Если задача не завершена, добавляем стиль зачёркивания.
     if !completed {
       attributes[.strikethroughStyle] = NSUnderlineStyle.single.rawValue
     }

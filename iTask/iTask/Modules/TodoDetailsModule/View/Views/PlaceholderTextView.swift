@@ -7,20 +7,24 @@
 
 import UIKit
 
+/// Кастомный `UITextView`, поддерживающий отображение текста-заглушки, когда текстовое поле пустое.
 final class PlaceholderTextView: UITextView {
   // MARK: Internal Properties
+  /// Заглушка, отображаемая в пустом текстовом поле.
   var placeholder: String? {
     didSet {
       placeholderLabel.text = placeholder
     }
   }
   
+  /// Обновляет видимость заглушки при изменении текста.
   override var text: String! {
     didSet {
       updatePlaceholderVisibility()
     }
   }
   
+  /// Переопределение шрифта для текста. Заглушка использует тот же шрифт.
   override var font: UIFont? {
     didSet {
       placeholderLabel.font = font
@@ -59,6 +63,7 @@ final class PlaceholderTextView: UITextView {
     updatePlaceholderVisibility()
   }
   
+  /// Обновление видимости метки заглушки в зависимости от наличия текста.
   private func updatePlaceholderVisibility() {
     placeholderLabel.isHidden = !text.isEmpty
   }
@@ -66,8 +71,8 @@ final class PlaceholderTextView: UITextView {
 
 // MARK: - UITextViewDelegate
 extension PlaceholderTextView: UITextViewDelegate {
+  /// Метод, вызываемый при изменении текста в текстовом поле.
   func textViewDidChange(_ textView: UITextView) {
     updatePlaceholderVisibility()
   }
 }
-

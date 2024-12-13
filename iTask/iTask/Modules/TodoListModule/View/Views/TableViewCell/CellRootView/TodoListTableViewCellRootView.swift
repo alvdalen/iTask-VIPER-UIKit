@@ -10,7 +10,9 @@ import UIKit
 fileprivate typealias Const = TodoListTableViewCellRootViewConst
 
 // MARK: - Delegate
+/// Протокол делегата для обработки действий в `rootView` ячейки.
 protocol TodoListTableViewCellRootViewDelegate: AnyObject {
+  /// Вызывается при нажатии на кнопку изменения состояния задачи.
   func didTapStateTaskButton()
 }
 
@@ -18,6 +20,9 @@ protocol TodoListTableViewCellRootViewDelegate: AnyObject {
 final class TodoListTableViewCellRootView: BaseRootView {
   // MARK: Internal Properties
   weak var delegate: TodoListTableViewCellRootViewDelegate?
+  
+  /// Констрейнт для левого положения кнопки состояния.
+  /// Устанавливается извне.
   var stateButtonLeadingConstraint: NSLayoutConstraint!
   
   // MARK: Views

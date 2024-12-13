@@ -33,6 +33,8 @@ final class TodoListViewController: BaseTodoListViewController {
   }
   
   // MARK: Internal Methods
+  /// Анимирует обновления таблицы с заданной анимацией.
+  /// - Parameter animation: Тип анимации для обновления строк таблицы.
   func animateTableViewUpdates(with animation: UITableView.RowAnimation) {
     guard rootView.todoListTableView.window != nil else { return }
     let indexSet = IndexSet(integer: .zero)

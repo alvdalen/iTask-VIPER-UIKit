@@ -8,17 +8,17 @@
 extension TodoListPresenter: TodoDetailsDelegate {
   func didSaveTodo(_ todo: Todo) {
     if interactor.todos.contains(where: { $0.id == todo.id }) {
-      // Обновляем существующую заметку
+      // Обновить существующую заметку
       interactor.update(todo: todo)
     } else {
-      // Добавляем новую заметку в начало списка
+      // Добавить новую заметку в начало списка
       interactor.add(todo: todo)
     }
     view?.reloadData()
   }
   
   func didDeleteTodo(_ todo: Todo) {
-    // Удаляем задачу из списка, если она есть
+    // Удалить задачу из списка, если она есть
     if let index = interactor.todos.firstIndex(where: { $0.id == todo.id }) {
       interactor.deleteTodo(at: index)
       view?.reloadData()

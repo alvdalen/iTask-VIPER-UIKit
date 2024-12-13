@@ -8,7 +8,10 @@
 import UIKit
 
 final class TodoListAssembly {
-  static func build() -> UIViewController {
+  /// Метод для создания и настройки всех необходимых компонентов и их связей.
+  /// - Returns: Настроенный `UINavigationController`,
+  /// содержащий `TodoListViewController`.
+  static func build() -> UINavigationController {
     // сервисы
     let networkService: NetworkServiceProtocol = NetworkService()
     let requestService: NetworkRequestServiceProtocol = NetworkRequestService()

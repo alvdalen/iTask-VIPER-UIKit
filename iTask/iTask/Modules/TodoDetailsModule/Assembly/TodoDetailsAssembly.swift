@@ -8,6 +8,12 @@
 import UIKit
 
 final class TodoDetailsAssembly {
+  /// Метод для создания и настройки экрана деталей задачи.
+  /// - Parameters:
+  ///   - todo: Объект задачи, для которой создаются детали.
+  ///   - delegate: Делегат для обратной связи.
+  ///   - navTitle: Заголовок для навигационной панели.
+  /// - Returns: Готовый для использования `UIViewController` экрана деталей задачи.
   static func build(
     with todo: Todo?,
     delegate: TodoDetailsDelegate,

@@ -8,6 +8,9 @@
 import Foundation
 
 extension Date {
+  /// Расширение для объекта `Date`, добавляющее метод для форматирования даты в строку.
+  /// - Parameter style: Стиль форматирования даты (например, `.long`).
+  /// - Returns: Строка, представляющая дату в заданном формате.
   func toLongDateString(style: DateFormatter.Style) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateStyle = style

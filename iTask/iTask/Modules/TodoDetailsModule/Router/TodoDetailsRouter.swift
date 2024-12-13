@@ -7,7 +7,6 @@
 
 import UIKit
 
-/// Управление навигацией в модуле NoteDetails
 final class TodoDetailsRouter: TodoDetailsRouterProtocol {
   
   weak var viewController: UIViewController?

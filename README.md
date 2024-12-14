@@ -1,4 +1,4 @@
-# iTask 📝
+# iTask
 <img src="https://img.shields.io/badge/Swift-5.5+-orange?logo=swift&logoColor=orange&color=orange&labelColor=white" height="30" />
 <img src="https://img.shields.io/badge/iOS-16.6+-blue?color=blue&labelColor=white" height="30" />
 

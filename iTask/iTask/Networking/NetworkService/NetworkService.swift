@@ -9,7 +9,13 @@ import Foundation
 
 /// Служба сети, которая отвечает за выполнение запросов.
 final class NetworkService {
-  var session: URLSession {
-    .shared
+  
+  let session: URLSession
+  
+  /// Инициализатор.
+  /// - Parameter session: Экземпляр `URLSession`.
+  /// По умолчанию используется `URLSession.shared`.
+  init(session: URLSession = .shared) {
+    self.session = session
   }
 }

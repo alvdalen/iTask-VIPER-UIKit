@@ -26,6 +26,8 @@ enum APIError: Error {
   
   /// Ошибка, возникающая при неверной обработке ответа или отсутствии валидного ответа от сервера.
   case responseError
+  
+  case invalidContentType
 }
 
 // MARK: - Localized Error
@@ -45,6 +47,8 @@ extension APIError: LocalizedError {
       return NSLocalizedString(Key.decodingError.rawValue, comment: .empty)
     case .responseError:
       return NSLocalizedString(Key.responseError.rawValue, comment: .empty)
+    case .invalidContentType:
+      return NSLocalizedString(Key.unknownError.rawValue, comment: .empty)
     }
   }
 }
